@@ -12,3 +12,8 @@ WHERE hire_date >= '1986-01-01' and hire_date <= '1986-12-31';
 SELECT man.dept_no, dep.dept_name, man.emp_no, emp.first_name, emp.last_name
 FROM dept_manager man, departments dep, employees emp
 WHERE man.dept_no = dep.dept_no AND man.emp_no = emp.emp_no;
+
+-- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+SELECT emp.emp_no, emp.last_name, emp.first_name, dep.dept_name
+FROM employees emp, departments dep, dept_emp  empl
+WHERE emp.emp_no = empl.emp_no AND dep.dept_no = empl.dept_no;
