@@ -22,3 +22,8 @@ WHERE emp.emp_no = empl.emp_no AND dep.dept_no = empl.dept_no;
 SELECT first_name, last_name, sex
 FROM employees
 WHERE first_name = 'Hercules' AND last_name ~ 'B';
+
+-- 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+SELECT emp.emp_no, emp.last_name, emp.first_name, dep.dept_name
+FROM employees emp, departments dep, dept_emp empl
+WHERE empl.dept_no = 'd007' AND emp.emp_no = empl.emp_no AND dep.dept_no = empl.dept_no;
