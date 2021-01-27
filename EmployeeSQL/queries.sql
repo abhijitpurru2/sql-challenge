@@ -27,3 +27,8 @@ WHERE first_name = 'Hercules' AND last_name ~ 'B';
 SELECT emp.emp_no, emp.last_name, emp.first_name, dep.dept_name
 FROM employees emp, departments dep, dept_emp empl
 WHERE empl.dept_no = 'd007' AND emp.emp_no = empl.emp_no AND dep.dept_no = empl.dept_no;
+
+-- 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+SELECT emp.emp_no, emp.last_name, emp.first_name, dep.dept_name
+FROM employees emp, departments dep, dept_emp empl
+WHERE (empl.dept_no = 'd007' OR empl.dept_no = 'd005') AND emp.emp_no = empl.emp_no AND dep.dept_no = empl.dept_no;
