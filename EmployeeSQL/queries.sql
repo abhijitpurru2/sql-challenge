@@ -32,3 +32,9 @@ WHERE empl.dept_no = 'd007' AND emp.emp_no = empl.emp_no AND dep.dept_no = empl.
 SELECT emp.emp_no, emp.last_name, emp.first_name, dep.dept_name
 FROM employees emp, departments dep, dept_emp empl
 WHERE (empl.dept_no = 'd007' OR empl.dept_no = 'd005') AND emp.emp_no = empl.emp_no AND dep.dept_no = empl.dept_no;
+
+-- 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+SELECT last_name, COUNT(*)
+FROM employees
+GROUP BY last_name
+ORDER BY count DESC
